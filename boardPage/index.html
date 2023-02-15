@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="board.css">
+    <script src="board.js" defer></script>
+    <title>Board</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/bf97a45c75.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="headbar">
+            <div class="Logo"><a href="">Date.now()</a>
+            </div>
+            <ul>
+                <li><a href="/" id="home">홈</a></li>
+                <li><a href="/boardPage/" id="gesi">게시판</a></li>
+                <li><a href="/profile/" id="profile">마이페이지</a></li>
+            </ul>
+            <div class="logInSignUp">
+                <a href="http://127.0.0.1:5500/login/login.html" id="lo">로그인</a>
+                <a id="bar">/</a>
+                <a href="http://127.0.0.1:5500/signUp/signup.html" id="si">회원가입</a>
+            </div>
+            
+        </div>
+        <hr size="1px" color="#cdcdcd">
+        
+        <div class="boardLetter" id="hWLetter"><a>데이트 코스 게시판</a></div>
+        
+        </div>
+
+    </header>
+    <main>
+        <div class="mainLetter">게시판</div>
+        <div class="mainBar">
+            <div class="sort">
+                <a>정렬</a>
+                <form action="">
+                    <select name="" id="sort">
+                        <option value="최신순">최신순</option>
+                        <option value="추천순">추천순</option>
+                        <option value="오래된 순">오래된 순</option>
+                    </select></form>
+            </div>
+        
+            <div class="mainSearch">
+                <form action="">
+                    <input type="text" placeholder="검색어를 입력하세요" id="serchBarMain"  style="background-color:transparent;" >
+                </form>
+                <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+                
+            </div>
+            <div class="mainButton">
+                <button>글쓰기</button>
+            </div>
+        </div>
+        <ul class="post">
+            
+
+        </ul>
+
+        <div class="iconNButton">
+            
+            <div class="pageButtons"></div>
+            
+        </div>
+            
+            
+        
+        
+            
+            
+        </div>
+        
+
+
+        
+            
+       
+    </main>
+</body>
+</html>

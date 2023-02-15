@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="signUp.js" defer></script>
+    
+</head>
+<body>
+    <div class="Logo"><a href="/">Date.now()</a>
+    </div>
+        <div class="emailLetter"><a>이메일</a></div>
+        <form action="" class="emailBox" onsubmit="return false;">
+            
+            <div class="emailBoxDiv">
+                <input id="email1" type="text" placeholder="이메일을 입력하세요" class="BorderColor">
+                
+            </div>    
+        </form>
+        <div class="warningLetter" id="emailwarn"></div>
+
+        <div class="pswordLetter"><a>비밀번호</a></div>
+        <form action="" class="password" onsubmit="return false;">
+            <input id="passwordbox" type="password" name="" placeholder="비밀번호를 입력하세요" class="BorderColor">
+            
+        </form>
+        <div class="warningLetter" id="pswordwarn"></div>
+
+
+        <div class="rePswordLetter" id="rePswordLetter"><a>비밀번호 재확인</a></div>
+        <form action="" class="password" onsubmit="return false;">
+            <input id="repasswordbox" type="password" name="" placeholder="비밀번호를 입력하세요" class="BorderColor">
+            
+        </form>
+        <div class="warningLetter" id="repswordwarn"></div>
+        <div class="warningLetter" id="discord"></div>
+
+        <div class="rePswordLetter" id="name"><a>이름</a></div>
+        <form action="" class="password" onsubmit="return false;">
+            <input id="namebox" type="text" name="" placeholder="이름을 입력하세요" class="BorderColor">
+            
+        </form>
+        <div class="warningLetter" id="namewarn"></div>
+
+        <div class="rePswordLetter" id="birth"><a>생년월일</a></div>
+        <div><form action="" class="password" id="YMD" onsubmit="return false;">
+            <input class="YMD"  id="years" type="text" name="" placeholder="년(4자)" class="BorderColor">
+            <select name="월" class="YMD" id="month">
+                <option value="1"> 01</option>
+                <option value="2">  02</option>
+                <option value="3">  03</option>
+                <option value="4">  04</option>
+                <option value="5">  05</option>
+                <option value="6">  06</option>
+                <option value="7">  07</option>
+                <option value="8">  08</option>
+                <option value="9">  09</option>
+                <option value="10">  10</option>
+                <option value="11">  11</option>
+                <option value="12">  12</option>
+                </select>
+            <input class="YMD" id="days" type="text" name="" placeholder="일" class="BorderColor">
+            
+            </form>
+        </div>
+        <div class="warningLetter" id="birthwarn"></div>
+
+        <div class="rePswordLetter" id="phoneNumber"><a>휴대전화</a></div>
+        <form action="" class="password" id="PNBox" onsubmit="return false;">
+            <input class="PN" id="PNInput" type="text" name="" placeholder="'-' 없이 입력" class="BorderColor">
+            <button class="PN" id="PNButton"><a>인증번호 받기</a></button>
+        </form>
+        <form action="" class="password" id="CPN" onsubmit="return false;">
+            <input id="getVerification" type="text" name="" placeholder="인증번호를 입력하세요" class="BorderColor">
+            
+        </form>
+        <div class="warningLetter" id="certiwarn"></div>
+
+        <div class="signInButtonflex" id="cautionLetter"><a>*가입 후, 정보 수정이 불가하니 신중하게 작성해 주세요.</a></div>
+        <div class="signInButtonflex">
+            <div class="signInButton" id="signInButton"><a href="">가입하기</a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

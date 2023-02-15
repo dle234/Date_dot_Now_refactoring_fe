@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/homepage/home.css">
+    <script src="/homepage/home.js" defer></script>
+    
+    <script src="/homepage/homeQuote.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script src="https://kit.fontawesome.com/bf97a45c75.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="headbar">
+            <div class="Logo"><a href="">Date.now()</a>
+            </div>
+            <ul>
+                <li><a href="/"  id="home">홈</a></li>
+                <li><a href="/boardPage"  id="gesi">게시판</a></li>
+                <li><a href="/profile" id="profile">마이페이지</a></li>
+            </ul>
+            <div class="logInSignUp">
+                <a href="/login/" class="login" id="lo">로그인</a>
+                <a id="bar">/</a>
+                <a href="/signUp" class="login" id="si">회원가입</a>
+                <a href=" " class="logout">로그아웃</a>
+            </div>
+            
+        </div>
+        <hr size="1px" color="#826695">
+        
+        <div class="headerWhere" id="hWLetter" ><a>어디로 떠나세요?</a></div>
+        <div  class="headerWhere"><button id="hWBtn" onClick='/research/'><a>검색어를 입력하세요</a></button>
+        </div>
+
+    </header>
+    <main>
+        <div class="mainLetter"><a>나는 연인과 함께</a></div>
+        <div class="mainQ">
+            <form action="">
+                <select name="맛집탐방" id="" class="questionWhere">
+                    <option value="맛집탐방">맛집탐방</option>
+                    <option value="쇼핑을 즐기는">쇼핑을 즐기는</option>
+                    <option value="테마파크">테마파크</option>
+                    <option value="힐링 실내">힐링 실내</option>
+                    <option value="힐링 실외">힐링 실외</option>
+                    <option value="스포츠를 즐기는">스포츠를 즐기는</option>
+                </select>
+                <a>데이트를 하고 싶어요.</a>
+            </form>
+
+        </div>
+
+        <div class="questionBtn"> 
+            <button id="anotherTaste">다른 취향 보기</button>
+            <button id="myTaste">내 취향 데이트 보기</button>
+        </div>
+
+            <div class="controls">
+                <div id=leftI><i  class="fa-solid fa-arrow-left"></i></div>
+                <div id=rightI><i  class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <div class="slideWrapper">
+                <ul class="sliders">
+                    <li id="section1"><img src="https://placeimg.com/340/250" alt="">
+                        <p class="p">새로운 나의 도시 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
+                        <p class="p2">여기에는 게시글 내용 가져오기</p>
+                        <br>
+                        <a href="/contentLook/6">자세히 보기</a>
+                    </li>
+                    <li id="section2"><img src="https://placeimg.com/340/250" alt="">
+                        <p class="p">새로운 2222 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
+                        <p class="p2">여기에는 게시글 내용 가져오기</p>
+                        <br>
+                        <a href="">자세히 보기</a></li>
+                    <li id="section3"><img src="https://placeimg.com/340/250" alt="">
+                        <p class="p">새로운 3333 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
+                        <p class="p2">여기에는 게시글 내용 가져오기</p>
+                        <br>
+                        <a href="">자세히 보기</a></li>
+                    <li id="section4"><img src="https://placeimg.com/340/250" alt="">
+                        <p class="p">새로운 4444 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
+                        <p class="p2">여기에는 게시글 내용 가져오기</p><br>
+                        <a href="">자세히 보기</a></li>
+                    <li id="section5"><img src="https://placeimg.com/340/250" alt="">
+                        <p class="p">새로운 5555 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
+                        <p class="p2">여기에는 게시글 내용 가져오기</p><br>
+                        <a href="">자세히 보기</a></li>
+            
+
+        </div>
+
+        <div class="bottomLetter">설레는 곳, 그게 바로 행복이지</div>
+        
+        <div class="slideWrapper2">
+            <ul class="sliders2">
+                <li id="section21">
+                    <img src="https://placeimg.com/310/480" alt=""> 
+                    <p>1어울리는 제목</p>
+                    <a href="">관련 글....게시글내용..</a>
+                     
+                </li>
+                <li id="section22">
+                    
+                    <img src="https://placeimg.com/310/480" alt="">
+                    <p>2어울리는 제목</p>
+                    <a href="">관련 글....게시글내용..</a>
+                    
+                </li>
+                <li id="section23">
+                    
+                    <img src="https://placeimg.com/310/480" alt="">
+                    <p>3어울리는 제목</p>
+                    <a href="">관련 글....게시글내용..</a>
+                    
+                </li>
+                <li id="section24">
+                    
+                    <img src="https://placeimg.com/310/480" alt="">
+                    <p>4어울리는 제목</p>
+                    <a href="">관련 글....게시글내용..</a>
+                    
+                </li>
+                <li id="section25">
+                    
+                    <img src="https://placeimg.com/310/480" alt="">
+                    <p>5어울리는 제목</p>
+                    <a href="">관련 글....게시글내용..</a>
+                    
+                </li>
+            </ul>
+        </div>
+        
+
+
+
+    </main>
+    
+   
+    
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contentLook.css">
+    <script src="contentLook.js" defer></script>
+    <script src="contentLookMap.js" defer></script>
+    <script src="contentLookReco.js" defer></script>
+    <script src="contentLookComment.js" defer></script>
+    <script src="Pagination.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ku6p4pvckf"></script>
+    <script src="https://kit.fontawesome.com/bf97a45c75.js" crossorigin="anonymous"></script>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://kit.fontawesome.com/bf97a45c75.js" crossorigin="anonymous"></script>   
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="headbar">
+            <div class="Logo"><a href="">Date.now()</a>
+            </div>
+            <ul>
+                <li><a href="/ id="home">홈</a></li>
+                <li><a href="/boardPage/" id="gesi">게시판</a></li>
+                <li><a href="/profile/" id="profile">마이페이지</a></li>
+            </ul>
+            <div class="logInSignUp">
+                
+                <a>로그아웃</a>
+            </div>
+            
+        </div>
+        <hr size="1px" color="#dadada">
+        
+    </header>
+    <div class="deleteNmodi">
+        <a href="http://localhost:3000/contentPage/">수정하기</a>
+        <p>삭제하기</p>
+    </div>
+    <div class="boardContent">
+        
+        <div class="outside">
+            <img src="https://placeimg.com/550/480" alt="" class="img">
+        </div>
+        <div class="contentEx">
+            <h></h>
+            <br>
+            <h></h>
+            <div class="contentInfo">
+                <div class="jochudat">
+                    <p>조회수</p>
+                    <p></p>
+                    <p>추천</p>
+                    <p></p>
+                    <p>댓글</p>
+                    <p></p>
+                
+                </div>
+                <div class="user">
+                    <img src="https://placeimg.com/30/30" alt="">
+                    <p>닉네임</p>
+                </div>
+            </div>
+            <ul class="hash">
+                
+                </ul>
+            <div class="mainContent">
+                
+                </div>
+        </div>
+
+    </div>
+    
+    <ul class="corabBox">
+        
+
+    </ul>
+    
+    <div class="finalBox">
+        
+        <div>
+            <p>총 예상 비용:</p>
+            <p id="final1">0</p>
+            <p>원</p>
+        </div>
+        <div>
+            <p>총 예상 시간:</p>
+            <p  id="final2">0</p>
+            <p>시간</p>
+        </div>
+
+        
+    </div>
+    <div class="map">
+        <div id="map" style="width:65%;height:500px;"></div>
+        <div class="g">
+            <div class="recommend">
+                <p>추천</p>
+                 <div><i class="fa-regular fa-heart"></i></div>
+                 <div class="icon"><i class="fa-solid fa-heart"></i></div>
+            </div>
+            <p>13</p>
+        </div>
+        
+        
+    </div>
+    
+
+    <hr class="line">
+    <div>
+        <div class="commentLetter">
+            <div>댓글 </div>
+            <a class="comentCounts">20</a>
+            <div>개</div></div>
+        
+
+        <ul class="commentList">
+            
+        </ul>
+        <div class="comentContent" name="content" contenteditable="true"></div>
+        <button class="comentBtn">등록</button>
+        
+        <div class="page">
+            <div class="pageButtons"></div>
+            <div>.</div>
+        </div>
+            
+         
+    </div>
+    
+
+    
+</body>
+<script></script>
+</html>

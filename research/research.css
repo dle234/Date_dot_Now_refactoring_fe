@@ -1,0 +1,148 @@
+body{
+    background-color: #F9F9F9;
+    width: 100vw;
+    height: 320vh;
+    
+    margin:0;
+}
+
+li{
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
+.unity{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    
+
+
+}
+.blackBox{
+    width: 390px;
+    height: 7vh;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.493);
+    position: relative;
+    bottom:37.7vh;
+    margin-bottom: 0;
+    display: flex;
+    border-top-left-radius:15px ;
+    border-top-right-radius:15px ;
+    
+}
+.blackBox i, .blackBox p{
+    z-index: 3;
+    color: #F9F9F9;
+    margin-left: 15px;
+    position: relative;
+    left: 10px;
+}
+
+.blackBox i{
+    position: relative;
+    top:20px;
+    
+}
+
+.hashTag{
+    position: relative;
+    bottom: 39vh;
+    margin-bottom: 0;
+    font-size: 13px;
+    color: #7e7e7e;
+    font-weight: 600;
+}
+
+.list{
+    width: 100vw;
+    
+    display: flex;
+    margin:0 auto;
+    
+}
+
+.box{
+    width: 390px;
+    height: 60vh;
+    margin:0 auto;
+    position: relative;
+    right: 2vw;
+    
+}
+
+.list>li>img{
+    border-radius: 15px;
+    width: 390;
+    height: 250;
+}
+
+
+
+.userAndLook{
+    display: flex;
+    justify-content: space-between;
+    margin:10px;
+    font-size: 17px;
+    position: relative;
+    bottom:75px;
+}
+#look{
+    color:#8b8b8b;
+    font-size: 17px;
+    position: relative;
+    top:4px;
+}
+#user img{
+    border-radius: 50px;
+    position: relative;
+    right: 5px;
+    top:4px;
+    width: 27px;
+    height: 27px;
+}
+#title span:first-child{
+    color:#F67777;
+    margin-right: 5px;
+    
+}
+#title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    bottom:75px;
+    font-weight: 600;
+}
+#postContents{
+    font-size: 13px;
+    position: relative;
+    bottom:75px;
+}
+.letter{
+    margin:0 auto;
+    margin-top: 25vh;
+    margin-bottom: 10vh;
+    font-size: 50px;
+    font-weight: 600;
+}
+.search{
+    margin:0 auto;
+    margin-bottom: 15vh;
+    background-color: #ddddddbd;
+    width: 35vw;
+    height: 7vh;
+    border:0;
+    padding-left:2vw ;
+    font-size: 17px;
+
+
+}
+#X{
+    position: absolute;
+    right: 10vw;
+    top: 10vh;
+    font-size: 28px;
+    color: #5f5f5f;
+}

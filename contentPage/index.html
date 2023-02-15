@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <link rel="stylesheet" href="content.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"/>
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
+    
+   
+    <title>Document</title>
+    
+</head>
+<body>
+    
+
+    <section class="reg-box">
+        <form class="firstForm">
+    
+            <div class="filebox">
+                <select name="맛집탐방" id="" class="questionWhere">
+                    <option value="맛집탐방">맛집탐방</option>
+                    <option value="쇼핑">쇼핑</option>
+                    <option value="테마파크">테마파크</option>
+                    <option value="힐링실내">힐링 실내</option>
+                    <option value="힐링실외">힐링 실외</option>
+                    <option value="스포츠">스포츠를 즐기는</option>
+                </select>
+                <label for="ex_file2" class="imgfile">
+                <i class="fa-solid fa-image"></i>
+                <p id="cautionImage">*이미지는 1장까지만 가능합니다.</p>
+                </label>
+            </div>
+    
+            <div class="totalboradBox">
+                <div class="putInPhoto">
+                    <img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" />
+                    <input
+                    type="file"
+                    id="ex_file2"
+                    accept=".gif, .jpg, .png" name="images" />
+                </div>
+    
+                <div class="jj">
+                    <div class="title-wrapper">
+                        <input class="boardTitle" contenteditable="true" placeholder="제목을 입력하세요">
+                        <div id="editor"></div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <ul class="corabBox corab-list">
+                <li class="firstLi corab-inputs">
+                    <div>
+                        <div>
+                            <div class="corab1">
+                                예상비용*
+                            </div>
+                            <input class="corab-cost" placeholder="숫자로 입력" name="content" contenteditable="true" id="firstcorab" />
+    
+                        </div>
+                        <div>
+                            <div class="corab3">
+                                예상시간*
+                            </div>
+                            <input class="corab-time" placeholder="숫자로 입력" name="content" contenteditable="true" id="secondcorab" />
+                        </div>
+                    </div>
+    
+                    <div>
+                        <input class="corab" id="real" contenteditable="true" placeholder="위치 혹은 장소를 입력해 주세요." />
+    
+                        <div class="corab" id="real2" name="content" contenteditable="true"></div>
+                    </div>
+    
+                    <div class="plusBtn corab-plus-btn">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </div>
+    
+                </li>
+                
+            </ul>
+    
+            <div class="finalBtn calculate-button"><p>총 예상 비용&총 예상 시간 확인하기</p></div>
+            <div class="finalBox">
+    
+                <div>
+                    <p>총 예상 비용:</p>
+                    <p class="calculate-result-cost" id="final1">0</p>
+                    <p>원</p>
+                </div>
+                <div>
+                    <p>총 예상 시간:</p>
+                    <p class="calculate-result-time" id="final2">0</p>
+                    <p>시간</p>
+                </div>
+            </div>
+    
+            <div class="background">
+    
+    
+                <div class="search">
+                    <input id="address" type="text" placeholder="주소를 입력하세요">
+                    <input id="submit" type="button" value="+">
+                </div>
+                <div id="map" style="width:80%;height:500px;"></div>
+    
+    
+                <div class="inputAddress">
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>주소</th>
+                                    <th>경도</th>
+                                    <th>위도</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mapList"></tbody>
+                        </table>
+                    </div>
+                </div>
+    
+                <input class="hashTag" type="text"
+                placeholder="#태그입력"
+                >
+    
+                <ul class="hashTagList">
+                </ul>
+                <hr class="sun">
+                <div class="submitBtn">발행하기</div>
+            </div>
+    
+        </form>
+    
+    
+        </section>
+    
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="controlCorab.js" defer></script>
+        <script src="corab.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="hashtag.js" defer></script>
+    <script src="content.js" defer></script>
+    <script src="calculateCorab.js" defer></script>
+    
+    <script src="toast.js" defer></script>
+    <script src="https://unpkg.com/json-form-data@^1.7.0/dist/jsonToFormData.min.js"></script>
+    <script type="text/javascript" 
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ku6p4pvckf&submodules=geocoder">
+</script>
+   
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://kit.fontawesome.com/bf97a45c75.js" crossorigin="anonymous"></script>
+	
+
+
+
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+</body>
+</html>

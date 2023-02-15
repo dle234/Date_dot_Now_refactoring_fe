@@ -1,0 +1,241 @@
+.emailBox{
+    display: flex;
+}
+body{
+    background-color: #F9F9F9;
+    width: 100vw;
+    height: 100vh;
+    margin-bottom: 20vh;
+    
+}
+.Logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    margin-bottom:10vh;
+
+}
+.Logo a{
+    color: #F67777;
+    font-size:40px;
+}
+a{
+    text-decoration: none;
+
+}
+
+
+.password{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vh;
+    margin-top: 1vh;
+}
+
+
+.emailBoxDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2vh;
+}
+
+#email1{
+    width:27vw;
+    height: 6vh;
+    font-size: 17px;
+    padding-left: 1vw;
+}
+
+.BorderColor{
+    border: 1px solid rgb(201, 201, 201);
+    border-radius :5px;
+}
+input:focus{
+    outline: none;
+    border: 1px solid #F67777;
+}
+select:focus{
+    outline: none;
+    border: 1px solid #F67777;
+}
+
+.BorderColor::placeholder{
+    color:rgb(175, 175, 175);
+    font-size:13.5px;
+}
+
+.emailLetter{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 12.5vw;
+}
+.pswordLetter{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 12vw;
+}
+
+.rePswordLetter{
+    display: flex;
+    justify-content: center;
+}
+#rePswordLetter
+{   position: relative;
+    right: 10vw;}
+
+.emailBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+#passwordbox{
+    width:27vw;
+    height: 6vh;
+    font-size: 17px;
+    padding-left: 1vw;
+}
+#repasswordbox{
+    width:27vw;
+    height: 6vh;
+    font-size: 17px;
+    padding-left: 1vw;
+}
+#namebox{
+    width:27vw;
+    height: 6vh;
+    font-size: 17px;
+    padding-left: 1vw;
+}
+
+#name{
+    position: relative;
+    right: 13vw;
+}
+#birth{
+    position: relative;
+    right: 12vw;
+}
+#phoneNumber{
+    position: relative;
+    right: 12vw;
+    
+}
+
+.YMD{
+    width:7.9vw;
+    height: 6vh;
+    font-size: 17px;
+    padding-left: 1vw;
+    margin-right: 0.5vw;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius :5px;
+}
+#month{
+    width:9vw;
+    height: 6.5vh;
+}
+.YMD::placeholder{
+    color:rgb(175, 175, 175);
+    font-size:13.5px;
+}
+option,select{
+    font-size:14px;
+}
+#YMD{
+    position: relative;
+    left:0.3vw;
+}
+.PN{
+    height: 6vh;
+    font-size: 17px;
+    padding-left: 1vw;
+    margin-right: 0.5vw;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius :5px;
+}
+.PN::placeholder{
+    color:rgb(175, 175, 175);
+    font-size:13.5px;
+}
+#PNInput{
+    width:18.6vw;
+}
+button a{
+    color:rgb(255, 255, 255);
+    font-size:13.5px;
+    padding-right: 1vw;
+    font-weight: 700;
+}
+#PNBox{
+    position:relative;
+    left:5px;
+
+}
+#PNButton{
+    height: 6.5vh;
+    border-radius :0px;
+    border: 0px;
+    background-color: #F67777;
+    
+}
+
+#PNButton:hover{
+    transition:0.2s ;
+    background-color: #f26666;
+    
+}
+.signInButton:hover{
+    transition:0.2s ;
+    background-color: #f26666;
+}
+.signInButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:28.5vw;
+    height:7vh;  
+    background-color: #F67777;
+    margin-bottom: 10vh;
+}
+
+.signInButton a{
+    color:#F9F9F9;
+    font-size: 17px;
+    font-weight: 700;
+}
+.signInButtonflex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cautionLetter a{
+    color:#B7B7B7;
+    font-size: 13px;
+    margin: 5vh 0vw;
+}
+#getVerification{
+    width:27vw;
+    height: 6vh;
+    font-size: 17px;
+    padding-left: 1vw;
+}
+.warningLetter{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 11vw;
+    font-size: 12px;
+    bottom:2vh;
+    color: #ff0000;
+}
+#discord{
+    position: relative;
+    right:8.5vw;
+}
