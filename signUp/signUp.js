@@ -19,11 +19,9 @@ const email = document.querySelector("#email1"),
     discord = document.querySelector("#discord"),
     certiWarn = document.querySelector("#certiwarn");
 
-
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 const check="";
-
-
 
 function war1(){
     emailWarn.innerText="필수 정보입니다."
@@ -52,7 +50,7 @@ function war5(){
 
 function signIn(event){
     event.preventDefault();
-    if (email.value == check ) {
+    if (emailRegex.test(email.value)) {
        war1();
     } else if (psword.value == check) {
         emailWarn.innerText="";

@@ -1,25 +1,22 @@
-
-
 const Editor = toastui.Editor;
 const editor = new toastui.Editor({
-  el: document.querySelector('#editor'),
-  previewStyle: 'vertical',
-  
-  initialEditType: 'wysiwyg',
+  el: document.querySelector("#editor"),
+  previewStyle: "vertical",
+
+  initialEditType: "wysiwyg",
   hideModeSwitch: true,
-  
+
   toolbarItems: [
-    ['heading', 'bold', 'italic', 'strike'],
-    ['hr', 'quote'],
-    ['ul', 'ol', 'task', 'indent', 'outdent'],
-  ]
-  
+    ["heading", "bold", "italic", "strike"],
+    ["hr", "quote"],
+    ["ul", "ol", "task", "indent", "outdent"],
+  ],
 });
 
-const fileDOM = document.querySelector('#ex_file2');
-const preview = document.querySelector('.image-box');
+const fileDOM = document.querySelector("#ex_file2");
+const preview = document.querySelector(".image-box");
 
-fileDOM.addEventListener('change', (e) => {
+fileDOM.addEventListener("change", (e) => {
   const reader = new FileReader();
   reader.onload = ({ target }) => {
     preview.src = target.result;
@@ -29,9 +26,8 @@ fileDOM.addEventListener('change', (e) => {
 
 function getImage() {
   // 파일
-  return fileDOM.files[0]
+  return fileDOM.files[0];
 }
-
 
 const submitButton = document.querySelector(".submitBtn");
 
@@ -47,31 +43,35 @@ async function submitPost() {
 
   console.log(image);
 
-  const responseDTO = await axios.post("http://localhost:8080/api/v1/posts", postDTO, {
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer " + localStorage.getItem("token")
+  const responseDTO = await axios.post(
+    "http://localhost:8080/api/v1/posts",
+    postDTO,
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
     }
-  });
-  
+  );
 
   if (responseDTO.status === 201) {
-    const resonseImg = await axios.put(`http://localhost:8080/api/v1/postsImg/${responseDTO.data.id}`, formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        "Authorization": "Bearer " + localStorage.getItem("token")
-      } 
-    })
-    
+    const resonseImg = await axios.put(
+      `http://localhost:8080/api/v1/postsImg/${responseDTO.data.id}`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      }
+    );
+
     if (resonseImg.status === 200) {
-      window.location = "/boardPage"
+      window.location = "/boardPage";
     }
   } else {
     return;
   }
-
-
-
 }
 
 function createPostDTO() {
@@ -80,10 +80,10 @@ function createPostDTO() {
   const categoryInput = document.querySelector(".questionWhere");
   const postMapList = document.querySelectorAll(".corab-inputs");
   const mapList = document.querySelectorAll("#mapList");
- 
+
   let hashTagAll = "";
   hashTagArray.forEach((hash) => {
-    hashTagAll += hash.text
+    hashTagAll += hash.text;
   });
 
   let postMaps = [];
@@ -92,7 +92,14 @@ function createPostDTO() {
   let maps = [];
   mapList.forEach((map) => maps.push(createMapObject(map)));
 
-  postDTO={"title":titleInput.value, "content":editor.getHTML(),"hashTag": hashTagAll,"category": categoryInput.name,"postMapList":postMaps,"mapList":postMaps};
+  postDTO = {
+    title: titleInput.value,
+    content: editor.getHTML(),
+    hashTag: hashTagAll,
+    category: categoryInput.name,
+    postMapList: postMaps,
+    mapList: postMaps,
+  };
 
   return postDTO;
 }
@@ -104,11 +111,11 @@ function createPostMapObject(postMap) {
   const content = postMap.querySelector("div.corab")?.innerText;
 
   return {
-    "expCost": cost,
-    "expTime": hour,
-    "keyword": keyword,
-    "content": content
-  }
+    expCost: cost,
+    expTime: hour,
+    keyword: keyword,
+    content: content,
+  };
 }
 
 function createMapObject(map) {
@@ -117,12 +124,10 @@ function createMapObject(map) {
   const lng = map.querySelector(".lng")?.innerText;
 
   return {
-    "lat": lat,
-    "lng": lng,
-    "keyword": address
-  }
+    lat: lat,
+    lng: lng,
+    keyword: address,
+  };
 }
-
-
 
 submitButton.addEventListener("click", submitPost);
