@@ -321,6 +321,12 @@ i {
     font-weight: 500;
     
 }
+.logInSignUp{
+    display: flex;
+}
 .logout{
     display: none;
+}
+#lo::after{
+    content: "/";
 }
