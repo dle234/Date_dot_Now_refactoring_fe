@@ -1,13 +1,13 @@
-//const { default: axios } = require('axios');
 
+import { logout, LoginStatus } from "../module/func.mjs";
 const posts = document.querySelector(".post");
 const sort = document.querySelector(".sort");
 const sortOption1 = document.querySelector(".sort option:first-child");
 const sortOption2 = document.querySelector(".sort option:nth-child(2)");
 const sortOption3 = document.querySelector(".sort option:last-child");
-const lo = document.querySelector('#lo');
-const si = document.querySelector('#si');
-const bar = document.querySelector('#bar');
+const logInLink = document.querySelector("#lo");
+const signInLink = document.querySelector("#si");
+const logOutBtn = document.querySelector(".logout");
 
 const pageButtons = document.querySelector(".pageButtons");
 
@@ -19,15 +19,14 @@ let maxButton = 10;
 const maxPage = Math.ceil(numOfContent / maxContent);
 let page = 1;
 let dataarr = [];
-console.log(localStorage.getItem('ture'));
 
-if (localStorage.getItem('ture')) {
-  lo.innerText = "로그아웃";
-  si.innerText = "";
-  bar.innerText = '';
-};
+window.addEventListener("load", LoginStatus(logInLink, signInLink, logOutBtn));
+logOutBtn.addEventListener("click", logout);
 
-axios.get("http://localhost:8080/api/v1/posts",{headers:{"Authorization": "Bearer" + localStorage.getItem("token") }})
+axios
+  .get("http://localhost:8080/api/v1/posts", {
+    headers: { Authorization: "Bearer" + localStorage.getItem("token") },
+  })
   .then((res) => {
     render(page, res.data);
 
@@ -35,21 +34,33 @@ axios.get("http://localhost:8080/api/v1/posts",{headers:{"Authorization": "Beare
     function transPost(id) {
       window.location = `/contentLook/${id}`;
     }
-    
-    console.log(postsClicks);
-    postsClicks.forEach(postClick => postClick.addEventListener("click", (e) => { transPost(e.target.id) }));
 
+    console.log(postsClicks);
+    postsClicks.forEach((postClick) =>
+      postClick.addEventListener("click", (e) => {
+        transPost(e.target.id);
+      })
+    );
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err);
   });
 
-
-function makeContents(id, img,hashtag,location, postOption, title, postContents, profilePhoto, profileName, userLook) {
+function makeContents(
+  id,
+  img,
+  hashtag,
+  location,
+  postOption,
+  title,
+  postContents,
+  profilePhoto,
+  profileName,
+  userLook
+) {
   const content = document.createElement("li");
   content.classList.add("box");
-  content.innerHTML =
-    `
+  content.innerHTML = `
     <img src=${img} alt="" class="thumbnail" id=${id}>
     <div class="hashTag">${hashtag}</div>
     <div class="blackBox">
@@ -71,17 +82,9 @@ function makeContents(id, img,hashtag,location, postOption, title, postContents,
             <i class="fa-regular fa-eye"></i>
             <span>${userLook}</span>
         </div>
-    </div>`
-
-    ;
+    </div>`;
   posts.appendChild(content);
 }
-
-
-
-
-
-
 
 //밑에 페이지 태그
 const makeButton = (id) => {
@@ -95,10 +98,10 @@ const makeButton = (id) => {
     [].forEach.call(pageButtons.children, (button) => {
       // pageButtons.forEach((button) => {
       if (button.dataset.num) button.classList.remove("active");
-    });// 콜백함수 사용이유가 
+    }); // 콜백함수 사용이유가
     e.target.classList.add("active");
     renderContent(parseInt(e.target.dataset.num));
-  });//버튼 클릭 시 페이지버튼의 자식요소들마다 콜백함수 실행,
+  }); //버튼 클릭 시 페이지버튼의 자식요소들마다 콜백함수 실행,
   // 콜백함수는 버튼의 num이 0이 아니면() 버튼의 클래스 active지움.
   // 이때 클래스 active는 색깔 빨갛게 변하는 것.
   // e.target은 특정 이벤트가 발생하는 태그 가져옴.->버튼 클릭 시 active 클래스 됨.(빨게짐)
@@ -106,7 +109,7 @@ const makeButton = (id) => {
   //                                 ->
   return button;
 };
-//위에 button -> buttons 로 바꾸고 buttons.forEach(button넣기) 로 
+//위에 button -> buttons 로 바꾸고 buttons.forEach(button넣기) 로
 ///////////////////////////////////////////////////
 
 const goPrevPage = () => {
@@ -129,13 +132,7 @@ next.classList.add("button", "next");
 next.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
 next.addEventListener("click", goNextPage);
 
-
-
-
-
-
 ///////////////////////////////////////////////////////////
-
 
 const renderContent = (page, dataarr) => {
   // 목록 리스트 초기화
@@ -148,7 +145,20 @@ const renderContent = (page, dataarr) => {
   //   makeContents(dataarr[id].imageUrl,dataarr[id].postMapList.keyword, dataarr[id].category, dataarr[id].title, dataarr[id].content, "https://placeimg.com/25/25", dataarr[id].writer, dataarr[id].viewCnt);
   // }
 
-  dataarr.forEach((data) => makeContents(data.id, data.imageUrl,data.hashTag ,data.postMapList[0]?.keyword, data.category, data.title, data.content, "https://placeimg.com/25/25", data.writer, data.viewCnt));
+  dataarr.forEach((data) =>
+    makeContents(
+      data.id,
+      data.imageUrl,
+      data.hashTag,
+      data.postMapList[0]?.keyword,
+      data.category,
+      data.title,
+      data.content,
+      "https://placeimg.com/25/25",
+      data.writer,
+      data.viewCnt
+    )
+  );
 };
 
 const renderButton = (page) => {
@@ -178,45 +188,15 @@ const render = (page, dataarr) => {
 };
 
 
-//////
-// axios.get("api/v1/posts")
-//   .then((res)=>{
-//     console.log(res.data);
-//     numOfContent=res.data.length;
-//     dataarr=res.data;
-//     render(page);
-
-//   })
-
-//   .catch(err=>{
-//     console.log(err);
-//   });
 
 
 
-////////////////////////////////////////////////////////
-
-
-// const postsClicks = document.querySelectorAll("li.box");
-// function transPost(link) {
-//   window.location = link;
-// }
-
-// console.log(postsClicks);
-// postsClicks.forEach(postClick => postClick.addEventListener("click", () => { transPost(`/contentLook/}`) }));
-
-/* uri 형식
-`/post/${postId}`
-*/
-
-
-const mainButton = document.querySelector(".mainButton button");
-mainButton.addEventListener('click', function () {
-  window.location = '/contentPage';
+const mainButton = document.querySelector(".mainButton");
+mainButton.addEventListener("click", function () {
+  window.location = "/contentPage";
 });
 
 const searchIcon = document.querySelector("#searchIcon");
-searchIcon.addEventListener('click', function () {
-  window.location = '/research';
+searchIcon.addEventListener("click", function () {
+  window.location = "/research";
 });
-

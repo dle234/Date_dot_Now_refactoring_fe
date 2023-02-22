@@ -1,11 +1,17 @@
-const list= document.querySelector(".list");
+const list = document.querySelector(".list");
 
-
-function makeContents(location,postOption,title,postContents,profilePhoto,profileName,userLook){
-    const content = document.createElement("li");
-    content.classList.add("box");
-    content.innerHTML = 
-    `
+function makeContents(
+  location,
+  postOption,
+  title,
+  postContents,
+  profilePhoto,
+  profileName,
+  userLook
+) {
+  const content = document.createElement("li");
+  content.classList.add("box");
+  content.innerHTML = `
     <img src="https://placeimg.com/390/250" alt="">
     <div class="hashTag">#맛집 #힐링</div>
     <div class="blackBox">
@@ -27,18 +33,14 @@ function makeContents(location,postOption,title,postContents,profilePhoto,profil
             <i class="fa-regular fa-eye"></i>
             <span>${userLook}</span>
         </div>
-    </div>`
-        
-    ;
-    list.appendChild(content);
+    </div>`;
+  list.appendChild(content);
 }
-
 
 //makeContents("동명동","맛집탐방",`감성카페랑 제목`,"안녕하세요 포스트 내용이 들어갈 자리 입니다.","https://placeimg.com/25/25","에코노","100" );
 
-
 ///////////////////////
-const x= document.querySelector("#X");
-x.addEventListener('click',()=>{
-    window.location = 'http://127.0.0.1:5500/homepage/home.html';
-})
+const x = document.querySelector("#X");
+x.addEventListener("click", () => {
+  window.history.back();
+});

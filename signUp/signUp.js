@@ -13,6 +13,8 @@ const email = document.querySelector("#email1"),
   signInBtn = document.querySelector("#signInButton"),
   emailWarn = document.querySelector("#emailwarn"),
   pswordWarn = document.querySelector("#pswordwarn"),
+  emailWarn2 = document.querySelector("#emailwarn2"),
+  pswordWarn2 = document.querySelector("#pswordwarn2"),
   repswordWarn = document.querySelector("#repswordwarn"),
   nameWarn = document.querySelector("#namewarn"),
   birthWarn = document.querySelector("#birthwarn");
@@ -32,9 +34,10 @@ function isValidEmail() {
     caution.essentialInfo(emailWarn);
   } else {
     if (!emailRegex.test(email.value)) {
-      caution.cautionMessage(emailWarn, "유효한 이메일을 입력해 주세요.");
-    } else {
       caution.cautionMessage(emailWarn, "");
+      caution.cautionMessage(emailWarn2, "유효한 이메일을 입력해 주세요.");
+    } else {
+      caution.cautionMessage(emailWarn2, "");
       emailTrue = true;
     }
   }
@@ -53,12 +56,13 @@ function isValidPassword() {
     caution.essentialInfo(pswordWarn);
   } else {
     if (!passwordRegex.test(psword.value)) {
+      caution.cautionMessage(pswordWarn, "");
       caution.cautionMessage(
-        pswordWarn,
+        pswordWarn2,
         "비밀번호는 영문자+숫자+특수문자 조합으로 8~20자리 사용해야 합니다."
       );
     } else {
-      caution.cautionMessage(pswordWarn, "");
+      caution.cautionMessage(pswordWarn2, "");
       passwordCorrect();
     }
   }

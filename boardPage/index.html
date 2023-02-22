@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="board.css">
-    <script src="board.js" defer></script>
+    <script src="board.js" type="module" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <title>Board</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/bf97a45c75.js" crossorigin="anonymous"></script>
@@ -21,9 +24,9 @@
                 <li><a href="/profile" id="profile">마이페이지</a></li>
             </ul>
             <div class="logInSignUp">
-                <a href="/login/" id="lo">로그인</a>
-                <a id="bar">/</a>
-                <a href="/signUp/" id="si">회원가입</a>
+                <a href="/login/" class="login" id="lo">로그인</a>
+                <a href="/signUp/" class="login" id="si">회원가입</a>
+                <a href="" class="logout">로그아웃</a>
             </div>
             
         </div>

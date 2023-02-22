@@ -1,3 +1,4 @@
+import { logout, LoginStatus } from "../module/func.mjs";
 const slide = document.querySelectorAll(".sliders li"),
   slideP = document.querySelectorAll(".p"),
   slideP2 = document.querySelectorAll(".p2"),
@@ -24,26 +25,8 @@ const slide = document.querySelectorAll(".sliders li"),
   login = document.querySelector(".logInSignUp a:first-child"),
   category = document.querySelector(".questionWhere");
 
-window.addEventListener("load", checkLoginStatus);
-function checkLoginStatus() {
-  if (localStorage.getItem("userId")) {
-    logInLink.style.display = "flex";
-    signInLink.style.display = "flex";
-    logOutBtn.style.display = "none";
-  } else {
-    logInLink.style.display = "none";
-    signInLink.style.display = "none";
-    logOutBtn.style.display = "flex";
-  }
-}
-
-function logout() {
-  localStorage.removeItem("userId");
-}
-
+window.addEventListener("load", LoginStatus(logInLink, signInLink, logOutBtn));
 logOutBtn.addEventListener("click", logout);
-
-// 이부분이랑 jwt 부분 모듈에 넣기.
 
 let currentIdx = 0,
   slideCount = slide.length;

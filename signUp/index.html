@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="signup.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="signUp.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
 
     
 </head>
@@ -23,32 +27,34 @@
             </div>    
         </form>
         <div class="warningLetter" id="emailwarn"></div>
+        <div class="warningLetter" id="emailwarn2"></div>
 
         <div class="pswordLetter"><a>비밀번호</a></div>
         <form action="" class="password" onsubmit="return false;">
-            <input id="passwordbox" type="password" name="" placeholder="비밀번호를 입력하세요" class="BorderColor">
+            <input id="passwordbox" type="password" name="" placeholder="비밀번호를 입력하세요" class="BorderColor" >
             
         </form>
         <div class="warningLetter" id="pswordwarn"></div>
+        <div class="warningLetter" id="pswordwarn2"></div>
 
 
         <div class="rePswordLetter" id="rePswordLetter"><a>비밀번호 재확인</a></div>
         <form action="" class="password" onsubmit="return false;">
-            <input id="repasswordbox" type="password" name="" placeholder="비밀번호를 입력하세요" class="BorderColor">
+            <input id="repasswordbox" type="password" name="" placeholder="비밀번호를 입력하세요" class="BorderColor" autocomplete="on">
             
         </form>
         <div class="warningLetter" id="repswordwarn"></div>
 
         <div class="rePswordLetter" id="name"><a>이름</a></div>
         <form action="" class="password" onsubmit="return false;">
-            <input id="namebox" type="text" name="" placeholder="이름을 입력하세요" class="BorderColor">
+            <input id="namebox" type="text" name="" placeholder="이름을 입력하세요" class="BorderColor" autocomplete="on">
             
         </form>
         <div class="warningLetter" id="namewarn"></div>
 
         <div class="rePswordLetter" id="birth"><a>생년월일</a></div>
         <div><form action="" class="password" id="YMD" onsubmit="return false;">
-            <input class="YMD"  id="years" type="text" name="" placeholder="년(4자)" class="BorderColor">
+            <input class="YMD"  id="years" type="text" name="" placeholder="년(4자)" class="BorderColor" autocomplete="on">
             <select name="월" class="YMD" id="month">
                 <option value="01"> 01</option>
                 <option value="02">  02</option>
@@ -63,7 +69,7 @@
                 <option value="11">  11</option>
                 <option value="12">  12</option>
                 </select>
-            <input class="YMD" id="days" type="text" name="" placeholder="일" class="BorderColor">
+            <input class="YMD" id="days" type="text" name="" placeholder="일" class="BorderColor" autocomplete="on">
             
             </form>
         </div>
@@ -71,11 +77,11 @@
 
         <div class="rePswordLetter" id="phoneNumber"><a>휴대전화</a></div>
         <form action="" class="password" id="PNBox" onsubmit="return false;">
-            <input class="PN" id="PNInput" type="text" name="" placeholder="'-' 없이 입력" class="BorderColor">
+            <input class="PN" id="PNInput" type="text" name="" placeholder="'-' 없이 입력" class="BorderColor" autocomplete="on">
             <button class="PN" id="PNButton"><a>인증번호 받기</a></button>
         </form>
         <form action="" class="password" id="CPN" onsubmit="return false;">
-            <input id="getVerification" type="text" name="" placeholder="인증번호를 입력하세요" class="BorderColor">
+            <input id="getVerification" type="text" name="" placeholder="인증번호를 입력하세요" class="BorderColor" autocomplete="on">
             
         </form>
         <div class="warningLetter" id="certiwarn"></div>
